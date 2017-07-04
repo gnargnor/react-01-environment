@@ -6,5 +6,19 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'app.bundle.js',
+    },
+    module: {
+        rules: [{
+            //regular expressions - sort of univeral-ish syntax used for search patterns
+            test: /\.js$/,
+            exclude: [/node_modules/],
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    //the env package installed via npm will transpile es2015, es2016, and es2017 to es5
+                    presets: ['env']
+                }
+            }
+        }]
     }
 };
