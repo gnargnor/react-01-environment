@@ -16,7 +16,7 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     //the env package installed via npm will transpile es2015, es2016, and es2017 to es5
-                    presets: ['env']
+                    presets: ['react', 'env']
                 }
             }
         }]
