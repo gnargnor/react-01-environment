@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/app.js';
 
 const container = document.getElementById('container');
-const myDiv = < div > Yellow World < /div>;
+
 
 ReactDOM.render(
-    myDiv,
+    <App></App>,
     container
 );
