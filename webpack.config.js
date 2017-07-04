@@ -8,17 +8,26 @@ module.exports = {
         filename: 'app.bundle.js',
     },
     module: {
-        rules: [{
-            //regular expressions - sort of univeral-ish syntax used for search patterns
-            test: /\.js$/,
-            exclude: [/node_modules/],
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    //the env package installed via npm will transpile es2015, es2016, and es2017 to es5
-                    presets: ['react', 'env']
+        rules: [
+            {
+                //regular expressions - sort of univeral-ish syntax used for search patterns
+                test: /\.js$/,
+                exclude: [/node_modules/],
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        //the env package installed via npm will transpile es2015, es2016, and es2017 to es5
+                        presets: ['react', 'env']
+                    }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             }
-        }]
+        ]
     }
 };
